@@ -1,7 +1,6 @@
 // This is a program that demonstrates the use of addNode feature by having the user input a list of 20 values and removes a node at a user chosen location.
 // Tyler Parnell
 #include <iostream>
-using namespace std;
 
 struct node {
   int info;
@@ -13,15 +12,15 @@ void printList(node* firstNode);
 void removeNode(node*& head, int deletePosition);
 
 int main() {
-  cout << "Enter 20 integers of your choice\n";
+  std::cout << "Enter 20 integers of your choice\n";
 
   int count = 0;                       // Initialize a counter to track the number of nodes added.
   int userValue = 0;                   // Variable to store the user's input value.
   node* problemTwoCurrentNode = NULL;  // Pointer to the current node in the linked list.
   node* problemTwoHeadNode = NULL;     // Pointer to the head (first node) of the linked list.
 
-  cout << "Enter the list of numbers: " << endl;  // Prompt the user to enter a list of numbers.
-  cin >> userValue;                               // Get the first value from the user.
+  std::cout << "Enter the list of numbers: " << std::endl;  // Prompt the user to enter a list of numbers.
+  std::cin >> userValue;                                    // Get the first value from the user.
 
   problemTwoCurrentNode =
       addNode(NULL, userValue);                // Create the first node with the user's input and initialize the list.
@@ -29,22 +28,22 @@ int main() {
   count++;                                     // Increment the counter as the first node is added.
 
   while (count < 20) {                                                  // Loop to add the remaining 19 nodes to the list.
-    cin >> userValue;                                                   // Get the next value from the user.
+    std::cin >> userValue;                                              // Get the next value from the user.
     problemTwoCurrentNode = addNode(problemTwoCurrentNode, userValue);  // Add a new node with the user's input.
     count++;                                                            // Increment the counter after adding a node.
   }
 
-  cout << "\nYou entered ";       // Print a message indicating the list entered by the user.
+  std::cout << "\nYou entered ";  // Print a message indicating the list entered by the user.
   printList(problemTwoHeadNode);  // Call the function to print the entire linked list.
 
-  int nodeToDelete;                                                    // Variable to store the position of the node to delete.
-  cout << "\nEnter the node (between 1 and 19) you wish to delete. ";  // Prompt the user to enter the position of the node to delete.
-  cin >> nodeToDelete;                                                 // Get the position of the node to delete from the user.
+  int nodeToDelete;                                                         // Variable to store the position of the node to delete.
+  std::cout << "\nEnter the node (between 1 and 19) you wish to delete. ";  // Prompt the user to enter the position of the node to delete.
+  std::cin >> nodeToDelete;                                                 // Get the position of the node to delete from the user.
 
   removeNode(problemTwoHeadNode, nodeToDelete);  // Call the function to remove the node at the specified position.
 
-  cout << "\nThe list has been updated with node " << nodeToDelete << " removed: ";  // Print a message indicating the node has been removed.
-  printList(problemTwoHeadNode);                                                     // Call the function to print the updated linked list.
+  std::cout << "\nThe list has been updated with node " << nodeToDelete << " removed: ";  // Print a message indicating the node has been removed.
+  printList(problemTwoHeadNode);                                                          // Call the function to print the updated linked list.
 
   return 0;  // End of the program.
 }
@@ -88,7 +87,7 @@ node* addNode(node* currentNode,
 
 void printList(node* currentNode) {  // make it so it traverses the list
   while (currentNode != NULL) {
-    cout << currentNode->info << " ";
+    std::cout << currentNode->info << " ";
     currentNode = currentNode->ptrNextNode;
   }
 }
