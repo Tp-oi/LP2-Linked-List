@@ -67,9 +67,11 @@ g++ -o linked_list_demo main.cpp
 
 ## Author
 
-Tyler Parnell (Tp-oi)
+Tyler Parnell (Tp-oi), Mathematics and Big Data Student.
+Feel free to reach out if you have questions about the project.
+Created for Computer Science 2 coursework 
 
-Created for Computer Science 2 coursework  
+*This project was completed as part of my ongoing effort to develop my data science skills and build my portfolio.*
 
 ---
 
